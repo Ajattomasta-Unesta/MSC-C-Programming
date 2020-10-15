@@ -90,10 +90,12 @@ int main(){
         
         //command tokenize
         char *div = strtok(query, " ");
-        strcpy(query_cmd, div);
+        if(div != NULL){
+            strcpy(query_cmd, div);
         
-        //aft cmd
-        div = strtok(NULL, " ");
+            //aft cmd
+            div = strtok(NULL, " ");
+        }
         
         int argvIndex = 0;
         
