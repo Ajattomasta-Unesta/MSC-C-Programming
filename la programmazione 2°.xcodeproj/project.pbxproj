@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6E835C5825382AD5002CACC3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E835C5325328290002CACC3 /* main.cpp */; };
-		6E835C5925382AD8002CACC3 /* laversionestrana.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E835C552537FECD002CACC3 /* laversionestrana.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -176,7 +175,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E835C5925382AD8002CACC3 /* laversionestrana.cpp in Sources */,
 				6E835C5825382AD5002CACC3 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

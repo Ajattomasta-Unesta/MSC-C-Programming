@@ -28,8 +28,7 @@ bool ls_op(char op[], char targ);
 struct dataset maindata[_ROW_LEN];
 volatile int mainindex = 0;
 
-int main(){
-
+void createDummy() {
     //============ DUMMY DATA ============
     struct dataset tmp;
     tmp.seq = 1;
@@ -65,7 +64,12 @@ int main(){
     maindata[3] = tmp;
 
     mainindex = 4;
-    //========================
+    //=====================================
+}
+
+int main(){
+
+    createDummy();
     
     printf("===== Die Musikbibliothek =====\n");
     printf("The music library, with command line\n");
