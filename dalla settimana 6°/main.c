@@ -8,29 +8,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h> //C99 CSP
 
-#define _STR_LEN  30 //maximum length -each column
-#define _ROW_LEN  20 //maximum length -dt-record
+#include "cstshell.h"
+#include "dataset.h"
 
-struct dataset { //data object
-    int seq;
-    char name[_STR_LEN];
-    char artist[_STR_LEN];
-    char genre[_STR_LEN];
-    int albumtyp;
-    int year;
-};
-
-int insert();
-int ls(char op[], char **argv);
-bool ls_op(char op[], char targ);
-
-struct dataset maindata[_ROW_LEN];
-volatile int mainindex = 0;
+extern dataset maindata[];
+extern volatile int mainindex;
 
 void createDummy() {
     //============ DUMMY DATA ============
-    struct dataset tmp;
+    dataset tmp;
     tmp.seq = 1;
     strcpy(tmp.name, "Vogguvisur Yggdrasils");
     strcpy(tmp.artist, "Skalmold");
@@ -68,24 +56,25 @@ void createDummy() {
 }
 
 int main(){
-
+    mainindex = 0;
+    
     createDummy();
     
     printf("===== Die Musikbibliothek =====\n");
     printf("The music library, with command line\n");
     
+    //sopravviveranno!!
     char query[64];
     char query_cmd[10];
     char query_op[10];
-    char **query_argv;
+    //char *query_argv = (char*)malloc(_STR_LEN);
+    char query_argv[_STR_LEN];
     
     while (1) {
         query[0] = '\0'; //init
-        memset(query_cmd, NULL, sizeof(query_cmd));
-        memset(query_op, NULL, sizeof(query_op));
-        
-        //prototype -FFTA
-        query_argv = (char**)malloc(sizeof(char*)*3);
+        memset(query_cmd, 0x00, sizeof(query_cmd));
+        memset(query_op, 0x00, sizeof(query_op));
+        memset(query_argv, 0x00, sizeof(query_argv));
         
         //command line startingpoint
         printf("> ");
@@ -101,19 +90,18 @@ int main(){
             div = strtok(NULL, " ");
         }
         
-        int argvIndex = 0;
+        //bool argvIndex = 0;
         
-        while (div != NULL) 
-        {
+        while (div != NULL) {
             if (div[0] == '-') { //separazione opzione(i)
                 for (int i = 1; !(div[i] == NULL); i++) 
                     query_op[i-1] = div[i];
-            }else { //separazione argomento(i)
-                query_argv[argvIndex] = (char*)malloc(_STR_LEN);
-                strcpy(query_argv[argvIndex], div);
-                argvIndex++;
+                div = strtok(NULL, " ");
+            }else{//separazione argomento(i)
+                strcat(query_argv, div);
+                div = strtok(NULL, " ");
+                if(div != NULL) strcat(query_argv, " ");
             }
-            div = strtok(NULL, " ");
         }
         
         int _result = -1; //to check the state
@@ -121,6 +109,8 @@ int main(){
             _result = insert();
         else if(!strcmp("ls", query_cmd)) 
             _result = ls(query_op, query_argv);
+        else if(!strcmp("rm", query_cmd)) 
+            _result = rm(query_argv);
         else if(!strcmp("exit", query_cmd)) 
             break;
         
@@ -128,14 +118,13 @@ int main(){
             printf("(%s) completed.\n", query_cmd);
             _result = -1;
         }else printf("Wrong command\n");
-        
-        //fight for the freedom
-        free(query_argv);
     }
+    
     
     return 0;
 }
 
+/*
 int insert() {
     struct dataset v;
     char tg[_STR_LEN] = {0,};
@@ -238,4 +227,4 @@ bool ls_op(char op[], char targ) { //cheking the options
         if(op[i] == targ) return true;
     }
     return false;
-}
+}*/
