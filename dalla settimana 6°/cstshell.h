@@ -4,8 +4,8 @@
 #include "dataset.h"
 
 int insert(void);
-bool insertdata(dataset t);
 int ls(char op[], char *argv);
 int rm(char *argv);
 
+int insertdata(dataset t);
 #endif

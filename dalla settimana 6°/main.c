@@ -13,7 +13,7 @@
 #include "cstshell.h"
 #include "dataset.h"
 
-extern dataset maindata[];
+extern dataset maindata[_ROW_LEN];
 extern volatile int mainindex;
 
 void createDummy() {
@@ -25,7 +25,7 @@ void createDummy() {
     strcpy(tmp.genre, "Viking Metal");
     tmp.albumtyp = 1;
     tmp.year = 2018;
-    maindata[0] = tmp;
+    insertdata(tmp);
     
     tmp.seq = 2;
     strcpy(tmp.name, "Power Plant");
@@ -33,7 +33,7 @@ void createDummy() {
     strcpy(tmp.genre, "Heavy Metal");
     tmp.albumtyp = 1;
     tmp.year = 1999;
-    maindata[1] = tmp;
+    insertdata(tmp);
     
     tmp.seq = 3;
     strcpy(tmp.name, "The Eighth Mountain");
@@ -41,7 +41,7 @@ void createDummy() {
     strcpy(tmp.genre, "Neoclassical Metal");
     tmp.albumtyp = 1;
     tmp.year = 2019;
-    maindata[2] = tmp;
+    insertdata(tmp);
     
     tmp.seq = 4;
     strcpy(tmp.name, "Twilight of the Thunder God");
@@ -49,9 +49,7 @@ void createDummy() {
     strcpy(tmp.genre, "Melodic Death Metal");
     tmp.albumtyp = 1;
     tmp.year = 2008;
-    maindata[3] = tmp;
-
-    mainindex = 4;
+    insertdata(tmp);
     //=====================================
 }
 

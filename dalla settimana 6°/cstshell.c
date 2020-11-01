@@ -113,18 +113,27 @@ int ls(char op[], char *argv) {
 }
 
 int rm(char *argv) {
+    int i;
     int index = atoi(argv);
-    memmove(maindata + index, maindata + index+1, mainindex+1 - index);
+
+    for(i = index; i < mainindex; i++) {
+        maindata[i].seq--;
+        maindata[i-1] = maindata[i];
+    }
+    
+    memset(&maindata[i-1], 0x00, sizeof(dataset));
+    mainindex--;
+
     return 0;
 }
 
-bool insertdata(dataset t) {
+int insertdata(dataset t) {
     t.seq = mainindex + 1;
     maindata[mainindex] = t;
     
     mainindex++;
     
-    return true;
+    return 0;
 }
 
 int insert() {
