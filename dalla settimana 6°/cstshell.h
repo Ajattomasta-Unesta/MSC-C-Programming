@@ -3,9 +3,9 @@
 
 #include "dataset.h"
 
-int insert(void);
+int insert(char *argv);
 int ls(char op[], char *argv);
-int rm(char *argv);
+int rm(char op[], char *argv);
 
 int insertdata(dataset t);
 #endif

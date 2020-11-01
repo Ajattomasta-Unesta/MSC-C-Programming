@@ -45,12 +45,12 @@ int ls(char op[], char *argv) {
         if(ls_search(i, argv)) {
             order[size] = i;
             size++;
-            order = (int*)realloc(order, sizeof(int)*size); //re-allocation to expend the array
+            order = (int*)realloc(order, (sizeof(int)*size)+1); //re-allocation to expend the array
         }
     }
     
     if (size == 0) {
-        printf("No results");
+        printf("No results\n");
         return false;
     } // if there's no argument -> COF
 
@@ -112,9 +112,19 @@ int ls(char op[], char *argv) {
     return 0;
 }
 
-int rm(char *argv) {
+int rm(char op[], char *argv) {
     int i;
+    
+    if(ls_op(op, 'r')) {
+        for(i = 0; i < mainindex; i++) 
+            memset(&maindata[i], 0x00, sizeof(dataset));
+        mainindex = 0;
+        return 0;
+    } //für al
+    
     int index = atoi(argv);
+    
+    if(index > mainindex) return 1;
 
     for(i = index; i < mainindex; i++) {
         maindata[i].seq--;
@@ -122,7 +132,7 @@ int rm(char *argv) {
     }
     
     memset(&maindata[i-1], 0x00, sizeof(dataset));
-    mainindex--;
+    mainindex--; //indexing -- to retrain
 
     return 0;
 }
@@ -131,13 +141,47 @@ int insertdata(dataset t) {
     t.seq = mainindex + 1;
     maindata[mainindex] = t;
     
-    mainindex++;
+    mainindex++; //l'unica parte può cambiare il contatore di index
     
     return 0;
 }
 
-int insert() {
+int insert(char *argv) {
     dataset v;
+    
+    if(argv[0] != NULL) {
+        int i;
+        char *div = strtok(argv, "/");
+        
+        //che cazzo perché non riesco ad accedere a questi elementi tramite index.??
+        for(i = 0; div != NULL; i++) {
+            switch (i) { 
+                case 0:
+                    strcpy(v.name, div);
+                    break;
+                case 1: 
+                    strcpy(v.artist, div);
+                    break;
+                case 2: 
+                    strcpy(v.genre, div);
+                    break;
+                case 3: 
+                    v.year = atoi(div);
+                    break;
+                case 4: 
+                    v.albumtyp = atoi(div);
+                    break;
+                default:
+                    break;
+            }
+            div = strtok(NULL, "/");
+        } 
+        if (i != 5) {
+            return 1;
+        }
+        return insertdata(v);
+    }
+    
     char tg[_STR_LEN] = {0,};
     
     printf("insert album name : ");

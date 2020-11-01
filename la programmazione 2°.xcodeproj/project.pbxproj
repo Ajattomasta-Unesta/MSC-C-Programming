@@ -90,11 +90,11 @@
 		6E835C572538002D002CACC3 /* dalla settimana 6° */ = {
 			isa = PBXGroup;
 			children = (
-				6E519B2D2547076A001BA3F7 /* main.h */,
-				6E519B292547065F001BA3F7 /* cstshell.h */,
-				6E835C5325328290002CACC3 /* main.c */,
-				6E519B282547065F001BA3F7 /* cstshell.c */,
 				6E519B30254709D7001BA3F7 /* dataset.h */,
+				6E519B2D2547076A001BA3F7 /* main.h */,
+				6E835C5325328290002CACC3 /* main.c */,
+				6E519B292547065F001BA3F7 /* cstshell.h */,
+				6E519B282547065F001BA3F7 /* cstshell.c */,
 			);
 			path = "dalla settimana 6°";
 			sourceTree = "<group>";
