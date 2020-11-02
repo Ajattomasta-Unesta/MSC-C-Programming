@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E519B2A2547065F001BA3F7 /* cstshell.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E519B282547065F001BA3F7 /* cstshell.c */; };
-		6E835C5825382AD5002CACC3 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E835C5325328290002CACC3 /* main.c */; };
+		6EC05026255022A30073D535 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6EC05025255022A30073D535 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +37,7 @@
 		6E99830D25179B0200C59D2E /* e3-3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "e3-3.cpp"; sourceTree = "<group>"; };
 		6E99830F25179B0200C59D2E /* e1-1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "e1-1.cpp"; sourceTree = "<group>"; };
 		6E99831025179B0200C59D2E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6EC05025255022A30073D535 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +54,7 @@
 		6E190076251797C100D2DE65 = {
 			isa = PBXGroup;
 			children = (
+				6EC05022254F83C60073D535 /* week 9 */,
 				6E835C572538002D002CACC3 /* dalla settimana 6° */,
 				6E33814C252A1F4C006DD901 /* week 5 */,
 				6ECB2B8A2520E712004754C0 /* week 4 */,
@@ -117,6 +118,14 @@
 				6E99831025179B0200C59D2E /* main.cpp */,
 			);
 			path = "week1:2";
+			sourceTree = "<group>";
+		};
+		6EC05022254F83C60073D535 /* week 9 */ = {
+			isa = PBXGroup;
+			children = (
+				6EC05025255022A30073D535 /* main.c */,
+			);
+			path = "week 9";
 			sourceTree = "<group>";
 		};
 		6ECB2B8A2520E712004754C0 /* week 4 */ = {
@@ -184,8 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E835C5825382AD5002CACC3 /* main.c in Sources */,
-				6E519B2A2547065F001BA3F7 /* cstshell.c in Sources */,
+				6EC05026255022A30073D535 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
