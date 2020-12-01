@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E5EF90F256345A4005D2CF6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E5EF90E256345A4005D2CF6 /* main.c */; };
+		6EBCEDE52576479B009825AA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6EBCEDE42576479B009825AA /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,8 +38,10 @@
 		6E99830D25179B0200C59D2E /* e3-3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "e3-3.cpp"; sourceTree = "<group>"; };
 		6E99830F25179B0200C59D2E /* e1-1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "e1-1.cpp"; sourceTree = "<group>"; };
 		6E99831025179B0200C59D2E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6EBCEDE42576479B009825AA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		6EC05025255022A30073D535 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		6EC44236255A7A83001EE0B8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		6EFB84E4256C6C0E00D626C2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,8 @@
 		6E190076251797C100D2DE65 = {
 			isa = PBXGroup;
 			children = (
+				6EBCEDE225764777009825AA /* week 13 */,
+				6EFB84E2256C6BFD00D626C2 /* week 12 */,
 				6E5EF90D2563458A005D2CF6 /* week 11 */,
 				6EC44234255A7A66001EE0B8 /* week 10 */,
 				6EC05022254F83C60073D535 /* week 9 */,
@@ -132,6 +136,14 @@
 			path = "week1:2";
 			sourceTree = "<group>";
 		};
+		6EBCEDE225764777009825AA /* week 13 */ = {
+			isa = PBXGroup;
+			children = (
+				6EBCEDE42576479B009825AA /* main.c */,
+			);
+			path = "week 13";
+			sourceTree = "<group>";
+		};
 		6EC05022254F83C60073D535 /* week 9 */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,14 @@
 				6E190082251797C100D2DE65 /* main.cpp */,
 			);
 			path = "week 4";
+			sourceTree = "<group>";
+		};
+		6EFB84E2256C6BFD00D626C2 /* week 12 */ = {
+			isa = PBXGroup;
+			children = (
+				6EFB84E4256C6C0E00D626C2 /* main.c */,
+			);
+			path = "week 12";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E5EF90F256345A4005D2CF6 /* main.c in Sources */,
+				6EBCEDE52576479B009825AA /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
