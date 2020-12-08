@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EBCEDE52576479B009825AA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6EBCEDE42576479B009825AA /* main.c */; };
+		6E4D4B65257F931C00629B1B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E835C5325328290002CACC3 /* main.c */; };
+		6E4D4B66257F931C00629B1B /* cstshell.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E519B282547065F001BA3F7 /* cstshell.c */; };
+		6E4D4B6A257F93BD00629B1B /* dtcontroller.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E4D4B69257F93BD00629B1B /* dtcontroller.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +28,8 @@
 		6E19007F251797C100D2DE65 /* la programmazione 2° */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "la programmazione 2°"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E190082251797C100D2DE65 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6E3381492528E1D2006DD901 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6E4D4B68257F93BD00629B1B /* dtcontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dtcontroller.h; sourceTree = "<group>"; };
+		6E4D4B69257F93BD00629B1B /* dtcontroller.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dtcontroller.c; sourceTree = "<group>"; };
 		6E519B282547065F001BA3F7 /* cstshell.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cstshell.c; sourceTree = "<group>"; };
 		6E519B292547065F001BA3F7 /* cstshell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cstshell.h; sourceTree = "<group>"; };
 		6E519B2D2547076A001BA3F7 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				6E835C5325328290002CACC3 /* main.c */,
 				6E519B292547065F001BA3F7 /* cstshell.h */,
 				6E519B282547065F001BA3F7 /* cstshell.c */,
+				6E4D4B68257F93BD00629B1B /* dtcontroller.h */,
+				6E4D4B69257F93BD00629B1B /* dtcontroller.c */,
 			);
 			path = "dalla settimana 6°";
 			sourceTree = "<group>";
@@ -233,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EBCEDE52576479B009825AA /* main.c in Sources */,
+				6E4D4B65257F931C00629B1B /* main.c in Sources */,
+				6E4D4B66257F931C00629B1B /* cstshell.c in Sources */,
+				6E4D4B6A257F93BD00629B1B /* dtcontroller.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

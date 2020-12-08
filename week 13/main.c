@@ -152,43 +152,82 @@
 //}
 //
 //
-//==CCDC==
+////==CCDC==
+//
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//
+//typedef struct _node {
+//    char c;
+//    struct _node* t;
+//} node;
+//
+//int main() {
+//    node* po[10];
+//    po[0] = malloc(sizeof(node));
+//    
+//    char *str = "xabcdefghi";
+//    
+//    for (int i = 1; i < 10; i++) {
+//        po[i] = malloc(sizeof(node));
+//        if ((i % 2) != 0) 
+//            po[i]->t = po[i-1];
+//        else
+//            po[i]->t = po[i-2];
+//        po[i]->c = str[i];
+//    }
+//    
+//    po[0]->t = po[1];
+//    
+//    int x;
+//    printf("Input X : ");
+//    scanf("%d", &x);
+//    
+//    node *cur = po[x]; 
+//    for (int i = 0; i < 10; i++) {
+//        printf("%c\n", cur->c);
+//        cur = cur->t;         
+//    }
+//
+//    return 0;
+//}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//
+//int main() {
+//    char str[30];
+//    char tg[30];
+//    int flag = 1;
+//    
+//    printf("Input Primo : ");
+//    scanf("%[^\n]", str);
+//    getchar();
+//    printf("Input target : ");
+//    scanf("%s", tg);
+//    
+//    for (int i = 0; i <= strlen(str)-strlen(tg); i++) {
+//        for (int j = 0; j < strlen(tg); j++) {
+//            if(tg[j] != str[j+i]) flag = 0;
+//        }
+//        if(flag) {
+//            printf("%s는 %d번에 포함되어 있음.\n", tg, i+1);
+//            flag = -1;
+//            //break;
+//        }
+//        flag = 1;
+//    }
+//    
+//    if(flag != -1) printf("%s는 포함되어 있지 아니하다.\n", tg);
+//    
+//    return 0;
+//}
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <unistd.h>
 #include <string.h>
-
-typedef struct _node {
-    char c;
-    struct _node* t;
-} node;
-
-int main() {
-    node* po[10];
-    po[0] = malloc(sizeof(node));
-    
-    char *str = "xabcdefghi";
-    
-    for (int i = 1; i < 10; i++) {
-        po[i] = malloc(sizeof(node));
-        if ((i % 2) != 0) 
-            po[i]->t = po[i-1];
-        else
-            po[i]->t = po[i-2];
-        po[i]->c = str[i];
-    }
-    
-    po[0]->t = po[1];
-    
-    int x;
-    printf("Input X : ");
-    scanf("%d", &x);
-    
-    node *cur = po[x]; 
-    for (int i = 0; i < 10; i++) {
-        printf("%c\n", cur->c);
-        cur = cur->t;         
-    }
-
-    return 0;
-}

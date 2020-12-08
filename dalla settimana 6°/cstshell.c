@@ -9,6 +9,7 @@
 #include <stdbool.h> //C99 CSP
 
 #include "dataset.h"
+#include "dtcontroller.h"
 
 dataset maindata[_ROW_LEN];
 volatile int mainindex;
@@ -211,4 +212,14 @@ int insert(char *argv) {
     getchar();
     
     return insertdata(v);
+}
+
+int update(char op[], char *argv) {
+    /****************/
+    return 0;
+}
+
+int save(dataset *tg, int arrindex) {
+    putbinarray(tg, arrindex);
+    return 0;
 }
