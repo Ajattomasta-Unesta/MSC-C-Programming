@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-#include "dtcontroller.h"
 #include "dataset.h"
 
 #define PRAGMA_RW 7
@@ -11,7 +10,8 @@
 
 void getbinarray(void);
 
-dataset maindata[_ROW_LEN];
+//dataset maindata[_ROW_LEN];
+//volatile int mainindex;
 
 FILE *f;
 int f_arrindex;
