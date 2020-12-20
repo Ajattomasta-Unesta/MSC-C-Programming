@@ -14,14 +14,16 @@
 #include "dataset.h"
 #include "dtcontroller.h"
 
-extern dataset maindata[_ROW_LEN];
-extern volatile int mainindex;
+dataset maindata[_ROW_LEN];
+volatile int mainindex;
+extern int filestatus;
 
 void createDummy();
 
 int main(){
-    init();
     mainindex = 0;
+    
+    init();
     
     printf("===== Die Musikbibliothek =====\n");
     printf("The music library, with command line\n");
@@ -68,18 +70,35 @@ int main(){
         }
         
         int _result = -1; //to check the state
-        if(!strcmp("insert", query_cmd)) 
+        if(!strcmp("insert", query_cmd)) {
             _result = insert(query_argv);
+            filestatus = 1;
+        }
         else if(!strcmp("ls", query_cmd)) 
             _result = ls(query_op, query_argv);
-        else if(!strcmp("rm", query_cmd)) 
+        else if(!strcmp("rm", query_cmd)) {
             _result = rm(query_op, query_argv);
-        else if(!strcmp("update", query_cmd)) 
+            filestatus = 1;
+        }
+        else if(!strcmp("update", query_cmd)) {
             _result = update(query_op, query_argv);
+            filestatus = 1;
+        }
         else if(!strcmp("save", query_cmd)) 
             _result = save(maindata, mainindex);
-        else if(!strcmp("exit", query_cmd)) 
-            break;
+        else if(!strcmp("export", query_cmd)) 
+            _result = export_to_csv(query_argv);
+        else if(!strcmp("exit", query_cmd)) {
+            if (filestatus == 1) {
+                char tmp;
+                printf("Your file has not been saved, Are you sure to exit? (y/n) : ");
+                scanf("%c", &tmp);
+                getchar();
+                
+                if ((tmp == 'y') || (tmp == 'Y')) break;
+                else continue;
+            }else break;
+        }
         else if (!strcmp("dummy", query_cmd)){
             createDummy();
             _result = 0;

@@ -11,4 +11,6 @@ int update(char op[], char *argv);
 int insertdata(dataset t);
 
 int save(dataset *tg, int arrindex);
+
+int export_to_csv(char* argv);
 #endif

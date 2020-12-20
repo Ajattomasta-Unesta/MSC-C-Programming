@@ -11,8 +11,8 @@
 #include "dataset.h"
 #include "dtcontroller.h"
 
-dataset maindata[_ROW_LEN];
-volatile int mainindex;
+extern dataset maindata[_ROW_LEN];
+extern volatile int mainindex;
 
 bool ls_op(char op[], char targ) { //cheking the options
     for(int i = 0; op[i] != NULL; i++) {
@@ -134,16 +134,18 @@ int rm(char op[], char *argv) {
     
     memset(&maindata[i-1], 0x00, sizeof(dataset));
     mainindex--; //indexing -- to retrain
-
+    
     return 0;
 }
 
 int insertdata(dataset t) {
+#pragma omp parallel
+    {
     t.seq = mainindex + 1;
     maindata[mainindex] = t;
     
     mainindex++; //l'unica parte può cambiare il contatore di index
-    
+    }
     return 0;
 }
 
@@ -221,5 +223,18 @@ int update(char op[], char *argv) {
 
 int save(dataset *tg, int arrindex) {
     putbinarray(tg, arrindex);
+    return 0;
+}
+
+int export_to_csv(char *argv) {
+    if(argv[0] == NULL) {
+        char tmp[256];
+        
+        printf("file name 입력 : ");
+        scanf("%s", tmp);
+        getchar();
+        
+        exportcsv(tmp);
+    }else exportcsv(argv);
     return 0;
 }
